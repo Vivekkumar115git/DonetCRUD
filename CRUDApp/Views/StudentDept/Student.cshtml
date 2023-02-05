@@ -1,0 +1,41 @@
+@using BOL;
+@{
+  ViewData["Title"] = "Student Page";
+}
+
+<div class="text-center">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Student ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Department Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @{
+        List<Student> allStudents = ViewData["Student"] as List<Student>;
+        foreach (Student s in allStudents)
+        {
+          <tr>
+
+            <td>@s.Student_Id</td>
+            <td>@s.Student_Name</td>
+            <td>@s.Department_Name</td>
+            <td> <form asp-controller="StudentDept" asp-action="Edit" asp-route-id="@s.Student_Id">
+                <input type="submit" class="btn btn-primary" value="Edit" />
+              </form><form asp-controller="StudentDept" asp-action="Delete" asp-route-id="@s.Student_Id">
+                <input type="submit" class="btn btn-danger" value="Delete" />
+              </form>
+
+            </td>
+
+          </tr>
+        }
+      }
+      <button type="button" class="btn btn-info"><a asp-controller="StudentDept" asp-action="Insert"
+          style="text-decoration: none; color:white;">Add New Student</a></button>
+    </tbody>
+  </table>
+</div>

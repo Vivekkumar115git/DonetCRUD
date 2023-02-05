@@ -1,0 +1,23 @@
+<div>
+
+    <form asp-controller="StudentDept" asp-action="EditStudent" method="post">
+
+        <div>
+            <label>Student Id</label>
+            <input type="number" name="Student_Id" id="Student_Id" value="@ViewBag.Id" readonly>
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" name="Student_Name" id="Student_Name" placeholder="Binod Kumar">
+        </div>
+        <div>
+            <label>Department Id</label>
+            <input type="number" name="Department_Id" id="Department_Id">
+
+        </div>
+         <button class="btn btn-primary" type="submit" name="Insert" id="Insert">Confirm Edit</button>
+    </form>
+
+
+
+</div>
