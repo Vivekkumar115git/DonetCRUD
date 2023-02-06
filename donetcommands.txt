@@ -1,0 +1,6 @@
+dotnet new sln
+dotnet new classlib -o nameofclass
+dotnet new mvc -o nameofwebmvc
+dotnet sln add nameofclass\nameofclass.csproj
+dotnet add reference ..\   \   .csproj
+dotnet add package mysql.data   ---> using Mysql.Data.mysqlclient
